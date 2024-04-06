@@ -36,5 +36,5 @@ let package = Package(
 )
 
 #if os(Linux)
-    package.dependencies.append(.package(url: "https://github.com/apple/swift-nio-zlib-support.git", from: "1.0.0"))
+    package.dependencies.append(.package(url: "https://github.com/apple/swift-nio-extras.git", from: "1.0.0"))
 #endif
