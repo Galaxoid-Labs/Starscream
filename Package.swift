@@ -30,11 +30,11 @@ let package = Package(
         dependencies: [],
         targets: [
             .target(name: "Starscream",
+                    dependencies: ["CZlib"],
                     path: "Sources",
-                    resources: [.copy("PrivacyInfo.xcprivacy")])
+                    resources: [.copy("PrivacyInfo.xcprivacy")]),
+            .target(name: "CZlib",
+                    path: "CZlib",
+                    linkerSettings: [.linkedLibrary("z")])
         ]
 )
-
-#if os(Linux)
-    package.dependencies.append(.package(url: "https://github.com/apple/swift-nio-extras.git", from: "1.0.0"))
-#endif
